@@ -29,7 +29,7 @@
 VERSION=2.0.33r3
 
 # Command used to run Lua code
-LUABIN=lua5.1
+LUABIN=lua
 
 # Path to the utility 'gdlib-config'. This may be changed to compile the
 # module with development versions of libgd.
@@ -46,7 +46,7 @@ OMITFP=-fomit-frame-pointer
 # change the next ones.
 
 # Name of .pc file. "lua5.1" on Debian/Ubuntu
-LUAPKG=lua5.1
+LUAPKG=lua
 OUTFILE=gd.so
 
 CFLAGS=-O3 -Wall -fPIC $(OMITFP)
@@ -54,7 +54,7 @@ CFLAGS+=`$(GDLIBCONFIG) --cflags` `pkg-config $(LUAPKG) --cflags`
 CFLAGS+=-DVERSION=\"$(VERSION)\"
 
 GDFEATURES=`$(GDLIBCONFIG) --features |sed -e "s/GD_/-DGD_/g"`
-LFLAGS=-shared `$(GDLIBCONFIG) --ldflags` `$(GDLIBCONFIG) --libs` -lgd
+LFLAGS=-shared `$(GDLIBCONFIG) --ldflags` `$(GDLIBCONFIG) --libs` -lgd -llua
 
 INSTALL_PATH := `$(LUABIN) -e'                          \
     for dir in package.cpath:gmatch("(/[^?;]+)?") do    \
