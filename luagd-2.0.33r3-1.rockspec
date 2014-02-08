@@ -2,7 +2,8 @@ package = "LuaGD"
 version = "2.0.33r3-1"
 
 source = {
-    url = "https://github.com/ittner/lua-gd/archive/lua-gd-2.0.33r3.tar.gz",
+    url = "https://github.com/ittner/lua-gd/archive/v2_0_33r2.tar.gz",
+    dir = "lua-gd-2_0_33r2"
 }
 
 description = {
